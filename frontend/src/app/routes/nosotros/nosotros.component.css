@@ -1,0 +1,26 @@
+body {
+    background-color: #3ac2e8;
+  }  
+  .card-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin-top: 3vw;
+    text-align: justify;
+    margin: 3vw;
+  }
+  
+  .card-title {
+      font-size: 18pt;
+      white-space: 5vw;
+  }
+  
+  .card-text {
+      font-size: 14pt;
+      text-align: justify;
+  }
+  
+.containercard{
+  background-color:  #56bded;
+}

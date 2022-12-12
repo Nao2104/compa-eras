@@ -1,0 +1,41 @@
+
+.boton-nav{
+    color: rgb(69, 180, 154);
+}
+
+.icono{
+    color: rgb(105, 191, 72);
+    
+}
+.barra-buscador{
+    font-size: x-large;
+   
+}
+.brand{
+    font-size: medium;
+    font-weight: bold;
+    color: grey;
+}
+.buscador{
+    width: 25vw;
+}
+
+.organizador{
+    margin-left: 80vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.lista-cadidatos{
+   width: 70%;
+}
+
+.pagination{
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.categoria{
+    margin-top: 10px;
+    display: list-item;
+}

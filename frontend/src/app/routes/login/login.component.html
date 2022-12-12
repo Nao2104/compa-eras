@@ -1,0 +1,38 @@
+<div class="body d-flex justify-content-center  mt-4 mb-4">
+  <div class="border p-3 rounded p-3 mb-5 bg-body rounded" style="width: 35rem">
+    <h2 class="text-center pb-3 h4 pb-2 mb-1 text-dark border-bottom fw-bold">LOGIN</h2>
+
+    <form #loginForm="ngForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">E-mail</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Type your E-mail"
+          name="email"
+          [ngModel]="this.userService.currentUser.email"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Contraseña</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Escribe una contraseña"
+          name="password"
+          [(ngModel)]="this.userService.currentUser.password"
+        />
+      </div>
+    </form>
+
+    <button
+        class="btn btn-success btn btn-md "
+        (click)="this.login(loginForm)">     
+        Ingresa
+      </button>
+  </div>
+</div>
+

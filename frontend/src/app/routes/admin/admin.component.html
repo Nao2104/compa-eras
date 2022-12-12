@@ -1,0 +1,122 @@
+<div class="contenido">
+<div class="tab-content" id="myTabContent">
+      
+  <div class="d-flex justify-content-center mt-1">
+<div class="border p-3 rounded" style="width: 25rem">
+ <h3 class="text-center pb-3">ADMINISTRADOR DE DATOS</h3>
+
+ <div class="mb-3">
+   <input type="hidden" id="_id" name="_id" [ngModel]="this.productService.currentProduct._id">
+ </div>
+
+ <div class="mb-3">
+   <input type="hidden" id="_id" name="_id" [ngModel]="this.productService.currentProduct._id">
+ </div>
+ 
+
+ <form #productForm="ngForm">
+
+   <div class="mb-3">
+     <input type="hidden" id="_id" name="_id" [ngModel]="this.productService.currentProduct._id">
+   </div>
+
+   <div class="mb-3">
+    <label for="name" class="form-label">Fecha</label>
+    <input
+      type="date"
+      class="form-control"
+      id="name"
+      placeholder=""
+      name="name"
+      [ngModel]="this.productService.currentProduct.name"
+    />
+  </div>
+
+   <div class="mb-3">
+     <label for="name" class="form-label">Detalle</label>
+     <input
+       type="text"
+       class="form-control"
+       id="name"
+       placeholder="Nombre de producto"
+       name="name"
+       [ngModel]="this.productService.currentProduct.name"
+     />
+   </div>
+   <div class="mb-3">
+     <label for="price" class="form-label">Valor Unitario</label>
+     <input
+       type="text"
+       class="form-control"
+       id="price"
+       placeholder="Nombre de producto"
+       name="price"
+       [ngModel]="this.productService.currentProduct.price"
+     />
+   </div>
+
+   <div class="mb-3">
+     <label for="stock" class="form-label">Cantidad</label>
+     <input
+       type="number"
+       class="form-control"
+       id="stock"
+       placeholder="Productos disponibles"
+       name="stock"
+       [ngModel]="this.productService.currentProduct.stock"
+     />
+  </div>
+  
+ </form>
+
+ <button class="btn btn-success d-flex aling-items-center" (click)="this.createProduct(productForm)">
+   <i class="material-icons">save</i>
+   Guardar
+ </button>
+</div>
+</div>
+
+
+ <section class="visualizador-tareas">
+
+   <div class="organizador btn-group">
+     <button class="btn btn-success btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+       Filtrar
+     </button>
+     <ul class="dropdown-menu">
+       <li><a class="dropdown-item" href="#">Más reciente</a></li>
+       <li><a class="dropdown-item" href="#">Más antiguo</a></li>
+       <li><a class="dropdown-item" href="#">Por Fecha</a></li>
+       
+     </ul>
+   
+   </div>
+   
+  
+   <div class="container-fluid px-5">
+     <table class="table">
+       <thead>
+         <tr>
+           <th>Detalle</th>
+           <th (click)="this.orderByPrice()" style="cursor: pointer">Valor Unitario</th>
+           <th>Cantidad</th>
+           <th>Acciones</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr *ngFor="let product of this.productService.products">
+          <td>{{ product.name }}</td>
+           <td>{{ product.price }}</td>
+           <td>{{ product.stock }}</td>
+            <td>
+             <div class="d-flex justify-content-evenly"></div>
+             <i class="material-icons text-danger" style="cursor: pointer;" (click)="this.deleteProduct(product._id, product.name)">delete_forever</i>
+             <i class="material-icons text-success" style="cursor: pointer" (click)="this.fillForm(product)">edit</i>
+           </td>
+         </tr>
+       </tbody>
+     </table>
+   </div>
+
+
+  
