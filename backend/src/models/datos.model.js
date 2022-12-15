@@ -5,14 +5,14 @@ const mongoose = require("mongoose")
 
 
 const { Schema } = mongoose
-const productSchema = new Schema(
+const datosSchema = new Schema(
     {
         date: { type: String, required: true},
-        detalle: { type: String, required: true},
+        name: { type: String, required: true},
         valorunitario: { type: String, required: true}, // las llaves de lacollecion
-        image: { type: String, required: true},
-        stock: { type: Number, default: 0},
-        keyWords: { type: Array, default: []},
+        cantidad: { type: String, required: true},
+        stock: { type: String, required: true},
+        estado: { type: Number, default: 0},
     },
     {
         versionKey: false, // que deseamos capturar cada que se inserte un dato
@@ -21,4 +21,4 @@ const productSchema = new Schema(
 )
 
 
-module.exports = mongoose.model("product", productSchema)
+module.exports = mongoose.model("Datos", datosSchema)

@@ -15,23 +15,15 @@
           <li class="nav-item">
             <a class="nav-link fs-5 p-2 text-gold" [routerLink]="['/admin']">Administrador de datos</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link fs-5 p-2 text-gold" [routerLink]="['/signup']">Registro</a>
+          </li>
         </ul>
         <div class="dropdown nav-link fs-6" *ngIf="this.userService.isLoggedIn()">
           <a class="btn btn-lg dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{ this.userService.decodeToken().firstName}}
           </a>
         
-          
-          <ul class="dropdown-menu fs-6 p-6">
-            <li><a class="dropdown-item  text-dark" style="cursor: pointer;">Configuración</a></li>
-            <li><a class="dropdown-item  text-dark" [routerLink]="['perfil']">Ver Perfil</a></li>
-            <hr class="dropdown-divider">
-            <li><a class="dropdown-item  text-dark" (click)="this.userService.logOut()">Cerrar Sesión</a></li>
-          </ul>
-        </div>
-
-        <a class="nav-link text-white" *ngIf="!this.userService.isLoggedIn()" [routerLink]="['/login']">LOGIN/</a>
         <a class="nav-link text-white" *ngIf="!this.userService.isLoggedIn()" [routerLink]="['/signup']">REGISTRO</a>
       </div>
     </div>
-  </nav>

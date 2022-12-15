@@ -14,7 +14,7 @@ app.get("/api", (req, res) => {
     res.status(200).json({msg: "Nephila v1.0.0"})
 })
 
-app.use("/product", require("./routes/product"))
+app.use("/datos", require("./routes/datos"))
 //user routes
 app.use("/user", require("./routes/user"))
 
